@@ -1,0 +1,21 @@
+{
+  "name": "sadlab-go-systray",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@3xpo/systray": "^1.1.6",
+    "debug": "^4.3.4",
+    "node-notifier": "^10.0.1",
+    "node-ssh": "^13.2.0"
+  },
+  "trustedDependencies": [
+    "ssh2",
+    "systray-bin"
+  ]
+}

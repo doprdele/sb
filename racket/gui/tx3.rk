@@ -1,0 +1,31 @@
+#lang racket/gui
+
+;; Create a new tray icon
+(define tray-icon (new tray-icon% [icon #f] [tooltip "Sys-Tray App"]))
+
+;; Create the menu for the tray icon
+(define tray-menu (new popup-menu%))
+
+;; Define a procedure to exit the application
+(define (exit-app)
+  (send tray-icon remove)
+  (exit))
+
+;; Create menu item A that exits the app
+(new menu-item% 
+     [parent tray-menu]
+     [label "A"]
+     [callback (λ (item event) (exit-app))])
+
+;; Create menu item B that exits the app
+(new menu-item% 
+     [parent tray-menu]
+     [label "B"]
+     [callback (λ (item event) (exit-app))])
+
+;; Set the tray icon's menu
+(send tray-icon set-popup-menu tray-menu)
+
+;; Run the application (this will keep the app running)
+(define frame (new frame%))
+(send frame show #f) ;; Hidden frame to keep the app running

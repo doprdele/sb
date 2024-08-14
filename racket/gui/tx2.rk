@@ -1,0 +1,12 @@
+#lang racket/gui
+
+;; Create a new frame (a window) with a title
+(define frame (new frame% [label "Hello World"]))
+
+;; Create a message (a text label) within the frame
+(define msg (new message% 
+                 [parent frame] 
+                 [label "Hello, Racket!"]))
+
+;; Show the frame (make the window visible)
+(send frame show #t)

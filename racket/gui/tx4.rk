@@ -1,0 +1,35 @@
+#lang racket/gui
+
+;; Create a hidden frame (window)
+(define frame (new frame% 
+                   [label "Sys-Tray App"]
+                   [width 200] 
+                   [height 200]))
+
+;; Create a menu bar
+(define menu-bar (new menu-bar% [parent frame]))
+
+;; Create a menu
+(define menu (new menu% [label "Menu"] [parent menu-bar]))
+
+;; Define a procedure to exit the application
+(define (exit-app)
+  (send frame show #f) ;; Hide the frame
+  (exit))
+
+;; Create menu item A that exits the app
+(new menu-item% 
+     [parent menu]
+     [label "A"]
+     [callback (λ (item event) (exit-app))])
+
+;; Create menu item B that exits the app
+(new menu-item% 
+     [parent menu]
+     [label "B"]
+     [callback (λ (item event) (exit-app))])
+
+;; Initially hide the frame to mimic a system tray app
+(send frame show #f)
+
+;; Mimic the system tray by​⬤

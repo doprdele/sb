@@ -1,0 +1,40 @@
+# Configuration file for Synapse.
+#
+# This is a YAML file: see [1] for a quick introduction. Note in particular
+# that *indentation is important*: all the elements of a list or dictionary
+# should have the same indentation.
+#
+# [1] https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html
+#
+# For more information on how to configure Synapse, including a complete accounting of
+# each option, go to docs/usage/configuration/config_documentation.md or
+# https://element-hq.github.io/synapse/latest/usage/configuration/config_documentation.html
+server_name: "100"
+pid_file: /Users/esarmien/prj/git/doprdele/sb/py-srv-matrix-synapse/homeserver.pid
+url_preview_enabled: true
+url_preview_ip_range_blacklist: [ "127.0.0.1/32" ]
+listeners:
+  - port: 8008
+    tls: false
+    type: http
+    x_forwarded: true
+    bind_addresses: ['::1', '127.0.0.1']
+    resources:
+      - names: [client, federation]
+        compress: false
+database:
+  name: sqlite3
+  args:
+    database: /Users/esarmien/prj/git/doprdele/sb/py-srv-matrix-synapse/homeserver.db
+log_config: "/Users/esarmien/prj/git/doprdele/sb/py-srv-matrix-synapse/100.log.config"
+media_store_path: /Users/esarmien/prj/git/doprdele/sb/py-srv-matrix-synapse/media_store
+registration_shared_secret: "aTSx2rIL3TsLmO.@k9nIlLN;^Iyy^t=uE39qOdnF9xg3:D:vF-"
+report_stats: false
+macaroon_secret_key: "aar94uf36I,q6fQY;su2pAWJUe4qKiw5vtnVQQR@C+dxz&KDo:"
+form_secret: "Xni98YAITLasW@;eSB=i:~sZ--toi@JlN-;3^dgJHY#D02_EIU"
+signing_key_path: "/Users/esarmien/prj/git/doprdele/sb/py-srv-matrix-synapse/100.signing.key"
+trusted_key_servers:
+  - server_name: "matrix.org"
+
+
+# vim:ft=yaml

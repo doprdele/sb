@@ -1,0 +1,17 @@
+{
+  "name": "yue",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "gui": "^0.15.4"
+  },
+  "trustedDependencies": [
+    "gui"
+  ]
+}

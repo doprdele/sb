@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "archive"
+version = "0.1.0"
+description = ""
+authors = ["Evan Sarmiento <evansarm@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+archivebox = {version = "^0.8.5rc44", allow-prereleases = true}
+toml = "^0.10.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,12 @@
+[project]
+name = "superset"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "apache-superset>=4.1.2",
+    "pip>=25.0.1",
+    "setuptools>=78.1.0",
+    "shillelagh[gsheetsapi]>=1.3.5",
+]

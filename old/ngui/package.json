@@ -1,0 +1,17 @@
+{
+  "name": "ngui",
+  "module": "index.ts",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "ffi-test": "https://github.com/joao678/libui-js"
+  },
+  "trustedDependencies": [
+    "koffi"
+  ]
+}
